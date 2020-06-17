@@ -8,7 +8,7 @@
   resultType="map"表示返回的是一个Map对象
   使用列名做key，值做value -->
   <select id="selectUser" resultType="map">
-  	SELECT * FROM TB_USER
+  	SELECT * FROM TB08_USER
   </select>
  
   <resultMap id="userResultMap" type="org.fkit.domain.User">
@@ -19,7 +19,7 @@
 	</resultMap>
   
    <select id="selectUser2" resultMap="userResultMap">
-  	SELECT * FROM TB_USER2
+  	SELECT * FROM TB09_USER
   </select>
   
   

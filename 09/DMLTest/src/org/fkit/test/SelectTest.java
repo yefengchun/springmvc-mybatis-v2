@@ -10,7 +10,7 @@ public class SelectTest {
 		// 获得Session实例
 		SqlSession session = FKSqlSessionFactory.getSqlSession();
 		// 根据id查询User对象
-		User user = session.selectOne("org.fkit.mapper.UserMapper.selectUser",1);
+		User user = session.selectOne("org.fkit.mapper.UserMapper.selectUser", 1);
 		System.out.println(user);
 		// 提交事务
 		session.commit();

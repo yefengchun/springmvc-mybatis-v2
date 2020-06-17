@@ -4,35 +4,44 @@ package org.fkit.domain;
 import java.io.Serializable;
 
 /**
- * 官方网站
- * www.fkjava.org
- * www.facejava.org
- * 学习交流论坛
- * www.crazyit.org
+ * 官方网站 www.fkjava.org www.facejava.org 学习交流论坛 www.crazyit.org
  *
  * @author 肖文吉
- * 
- * CREATE TABLE `tb_user` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(18) DEFAULT NULL,
-  `sex` CHAR(2) DEFAULT NULL,
-  `age` INT(11) DEFAULT NULL,
-  PRIMARY KEY  (`id`)
-)
+  
+ use mybatis;
+
+drop table if exists tb_user_08;
+
+CREATE TABLE `tb_user_08` ( 
+          `id` INT(11) NOT NULL AUTO_INCREMENT, 
+          `name` VARCHAR(18) DEFAULT NULL, 
+          `sex` CHAR(2) DEFAULT NULL, 
+          `age` INT(11) DEFAULT NULL, PRIMARY KEY (`id`) 
+ );
+ 
+ insert into tb_user_08(name,sex,age) 
+ value ('Jack','男',26);
+ insert into tb_user_08(name,sex,age) 
+ value ('Mary','女',26);
+ 
+ 
+ select * from tb_user_08;
+ 
+ *         
  */
-public class User implements Serializable{
-	
+public class User implements Serializable {
+
 	private Integer id;
 	private String name;
 	private String sex;
 	private Integer age;
-	
+
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	public User( String name, String sex, Integer age) {
+
+	public User(String name, String sex, Integer age) {
 		super();
 		this.name = name;
 		this.sex = sex;
@@ -42,34 +51,38 @@ public class User implements Serializable{
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getSex() {
 		return sex;
 	}
+
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
+
 	public Integer getAge() {
 		return age;
 	}
+
 	public void setAge(Integer age) {
 		this.age = age;
 	}
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", sex=" + sex + ", age="
-				+ age + "]";
+		return "User [id=" + id + ", name=" + name + ", sex=" + sex + ", age=" + age + "]";
 	}
-	
-	
 
 }
