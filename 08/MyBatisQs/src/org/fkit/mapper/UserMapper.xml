@@ -10,7 +10,7 @@
 	useGeneratedKeys="true"表示使用数据库的自动增长策略
  -->
   <insert id="save" parameterType="org.fkit.domain.User" useGeneratedKeys="true">
-  	INSERT INTO TB_USER(name,sex,age) 
+  	INSERT INTO TB_USER_08(name,sex,age) 
   	VALUES(#{name},#{sex},#{age})
   </insert>
   
