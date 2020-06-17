@@ -3,23 +3,31 @@ package org.fkit.domain;
 import java.io.Serializable;
 
 /**
- * CREATE TABLE tb_card(
+ * 
+use mybatis;
+
+drop table if exists tb12_person;
+drop table if exists tb12_card;
+
+CREATE TABLE tb12_card(
 id INT PRIMARY KEY AUTO_INCREMENT,
-CODE VARCHAR(18)
+`CODE` VARCHAR(18)
 );
 
-INSERT INTO tb_card(CODE) VALUES('432801198009191038');
+INSERT INTO tb12_card(CODE) VALUES('432801198009191038');
 
-CREATE TABLE tb_person(
+CREATE TABLE tb12_person(
 id INT PRIMARY KEY AUTO_INCREMENT,
-NAME VARCHAR(18),
+`NAME` VARCHAR(18),
 sex VARCHAR(18),
 age INT,
 card_id INT UNIQUE,
-FOREIGN KEY (card_id) REFERENCES tb_card(id)
+FOREIGN KEY (card_id) REFERENCES tb12_card(id)
 );
 
-INSERT INTO tb_person(NAME,sex,age,card_id) VALUES('jack','男',23,1)
+INSERT INTO tb12_person(`NAME`,sex,age,card_id) VALUES('jack','男',23,1);
+  
+ 
 
  * */
 public class Person implements Serializable {

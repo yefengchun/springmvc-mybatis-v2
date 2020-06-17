@@ -12,13 +12,20 @@ import java.io.Serializable;
  *
  * @author 肖文吉
  * 
- * CREATE TABLE `tb_user` (
+ * 
+use mybatis;
+
+drop table if exists tb12_user;
+
+CREATE TABLE `tb12_user` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(18) DEFAULT NULL,
   `sex` CHAR(2) DEFAULT NULL,
   `age` INT(11) DEFAULT NULL,
   PRIMARY KEY  (`id`)
-)
+);
+  
+  
  */
 public class User implements Serializable{
 	

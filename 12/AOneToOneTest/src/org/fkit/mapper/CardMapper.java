@@ -5,7 +5,7 @@ import org.fkit.domain.Card;
 
 public interface CardMapper {
 
-	@Select("SELECT * FROM TB_CARD WHERE ID = #{id} ")
+	@Select("SELECT * FROM TB12_CARD WHERE ID = #{id} ")
 	Card selectCardById(Integer id);
 	
 }
