@@ -1,6 +1,5 @@
 package org.fkit.test;
 
-
 import org.apache.ibatis.session.SqlSession;
 import org.fkit.factory.FKSqlSessionFactory;
 

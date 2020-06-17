@@ -10,7 +10,7 @@ public class InsertTest {
 		// 获得Session实例
 		SqlSession session = FKSqlSessionFactory.getSqlSession();
 		// 创建User对象
-		User user = new User("jack", "男", 22);
+		User user = new User("Tom", "男", 22);
 		// 插入数据
 		session.insert("org.fkit.mapper.UserMapper.saveUser", user);
 		// 提交事务
