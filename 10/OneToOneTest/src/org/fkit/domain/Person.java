@@ -3,7 +3,13 @@ package org.fkit.domain;
 import java.io.Serializable;
 
 /**
- * CREATE TABLE tb_card(
+ * 
+use mybatis;
+
+drop table if exists tb_person;
+drop table if exists tb_card;
+
+CREATE TABLE tb_card(
 id INT PRIMARY KEY AUTO_INCREMENT,
 CODE VARCHAR(18)
 );

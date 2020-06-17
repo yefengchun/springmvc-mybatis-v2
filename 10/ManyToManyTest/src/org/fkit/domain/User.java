@@ -6,23 +6,30 @@ import java.util.UUID;
 
 /**
  * 
- CREATE TABLE tb_user(
+use mybatis;
+
+drop table if exists tb_item;
+drop table if exists tb_order;
+drop table if exists tb_article;
+drop table if exists tb_user_10;
+
+CREATE TABLE tb_user_10(
 id INT PRIMARY KEY AUTO_INCREMENT,
 username VARCHAR(18),
 loginname VARCHAR(18),
-PASSWORD VARCHAR(18),
+`PASSWORD` VARCHAR(18),
 phone VARCHAR(18),
 address VARCHAR(18)
 );
 
-INSERT INTO tb_user(username,loginname,PASSWORD,phone,address)
+INSERT INTO tb_user_10(username,loginname,PASSWORD,phone,address)
 VALUES('杰克','jack','123456','13920001616','广州');
 
 CREATE TABLE tb_article(
 id INT PRIMARY KEY AUTO_INCREMENT,
-NAME VARCHAR(18),
+`NAME` VARCHAR(50),
 price DOUBLE,
-remark VARCHAR(18)
+remark VARCHAR(50)
 );
 
 INSERT INTO tb_article(NAME,price,remark) 
@@ -34,14 +41,14 @@ VALUES('疯狂iOS讲义',89.9,'李刚老师经典著作');
 INSERT INTO tb_article(NAME,price,remark) 
 VALUES('SpringMVC+MyBatis企业开发',69.9,'肖文吉老师经典著作');
 
-139.8+108.9=217.8
+# 139.8+108.9=217.8
 
 CREATE TABLE tb_order(
-id INT PRIMARY KEY AUTO_INCREMENT,
-CODE VARCHAR(32),
-total DOUBLE,
-user_id INT,
-FOREIGN KEY (user_id) REFERENCES tb_user(id)
+`id` INT PRIMARY KEY AUTO_INCREMENT,
+`CODE` VARCHAR(32),
+`total` DOUBLE,
+`user_id` INT,
+FOREIGN KEY (user_id) REFERENCES tb_user_10(id)
 );
 
 INSERT INTO tb_order(CODE,total,user_id)
@@ -74,6 +81,10 @@ VALUES(2,1,1);
  * */
 public class User implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4359606502667405008L;
 	private Integer id;  // 用户id，主键
 	private String username;  // 用户名
 	private String loginname; // 登录名
