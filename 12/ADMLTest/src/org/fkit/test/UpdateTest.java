@@ -14,7 +14,7 @@ public class UpdateTest {
 		// 创建UserMapper实例
 		UserMapper um = session.getMapper(UserMapper.class);
 		// 查询id=5的User对象
-		User user = um.selectUserById(5);
+		User user = um.selectUserById(4);
 		// 修改查询到的User对象
 		user.setName("update");
 		user.setSex("女");

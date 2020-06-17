@@ -9,7 +9,7 @@ import org.fkit.domain.Person;
 
 public interface PersonMapper {
 	
-	@Select("SELECT * FROM TB_PERSON WHERE ID = #{id}")
+	@Select("SELECT * FROM TB12_PERSON WHERE ID = #{id}")
 	@Results({
 		@Result(id=true,column="id",property="id"),
 		@Result(column="name",property="name"),
