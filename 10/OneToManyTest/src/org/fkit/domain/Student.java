@@ -4,36 +4,37 @@ import java.io.Serializable;
 
 /**
  *
- CREATE TABLE tb_clazz(
-id INT PRIMARY KEY AUTO_INCREMENT,
-CODE VARCHAR(18),
-NAME VARCHAR(18)
-);
-
-INSERT INTO tb_clazz(CODE,NAME) VALUES('j1601','Java就业班');
-
-CREATE TABLE tb_student(
-id INT PRIMARY KEY AUTO_INCREMENT,
-NAME VARCHAR(18),
-sex VARCHAR(18),
-age INT,
-clazz_id INT,
-FOREIGN KEY (clazz_id) REFERENCES tb_clazz(id)
-);
-
-INSERT INTO tb_student(NAME,sex,age,clazz_id) VALUES('jack','男',23,1);
-INSERT INTO tb_student(NAME,sex,age,clazz_id) VALUES('rose','女',18,1);
-INSERT INTO tb_student(NAME,sex,age,clazz_id) VALUES('tom','男',21,1);
-INSERT INTO tb_student(NAME,sex,age,clazz_id) VALUES('alice','女',20,1);
-
- * */
+ * use mybatis;
+ * 
+ * drop table if exists tb_student; drop table if exists tb_clazz;
+ * 
+ * CREATE TABLE tb_clazz( `id` INT PRIMARY KEY AUTO_INCREMENT, `CODE`
+ * VARCHAR(18), `NAME` VARCHAR(18) );
+ * 
+ * INSERT INTO tb_clazz(CODE,NAME) VALUES('j1601','Java就业班'); INSERT INTO
+ * tb_clazz(CODE,NAME) VALUES('j1602','Python提高班');
+ * 
+ * CREATE TABLE tb_student( `id` INT PRIMARY KEY AUTO_INCREMENT, `NAME`
+ * VARCHAR(18), `sex` VARCHAR(18), `age` INT, `clazz_id` INT, FOREIGN KEY
+ * (clazz_id) REFERENCES tb_clazz(id) );
+ * 
+ * INSERT INTO tb_student(NAME,sex,age,clazz_id) VALUES('jack','男',23,1); INSERT
+ * INTO tb_student(NAME,sex,age,clazz_id) VALUES('rose','女',18,1); INSERT INTO
+ * tb_student(NAME,sex,age,clazz_id) VALUES('tom','男',21,1); INSERT INTO
+ * tb_student(NAME,sex,age,clazz_id) VALUES('alice','女',20,1);
+ * 
+ */
 public class Student implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8985198663152992443L;
 	private Integer id; // 学生id，主键
 	private String name; // 姓名
-	private String sex;  // 性别
+	private String sex; // 性别
 	private Integer age; // 年龄
-	
+
 	// 学生和班级是多对一的关系，即一个学生只属于一个班级
 	private Clazz clazz;
 
@@ -84,9 +85,7 @@ public class Student implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", sex=" + sex
-				+ ", age=" + age + "]";
+		return "Student [id=" + id + ", name=" + name + ", sex=" + sex + ", age=" + age + "]";
 	}
 
-	
 }

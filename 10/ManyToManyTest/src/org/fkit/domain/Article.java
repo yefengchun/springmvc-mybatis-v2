@@ -5,6 +5,10 @@ import java.util.List;
 
 public class Article implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4034836222927871650L;
 	private Integer id;		// 商品id，主键
 	private String name;	// 商品名称
 	private Double price;	// 商品价格
